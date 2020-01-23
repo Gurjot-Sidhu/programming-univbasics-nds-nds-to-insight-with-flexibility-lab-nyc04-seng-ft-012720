@@ -59,18 +59,13 @@ def gross_per_studio(collection)
 end
 
 def movies_with_directors_set(source)
-  index = 0
-  a_o_a_movies_by_dir = []
-
-  while index < source.length do
-    dir_info_hash = source[index]
-    director_name = dir_info_hash[:name]
-    directors_movies = dir_info_hash[:movies]
-    a_o_a_movies_by_dir << movies_with_director_key(director_name, directors_movies)
-    index += 1
+  new_array = []
+  i = 0 
+  while i < source.length do 
+    new_array << movies_with_director_key(source[i][:name], source[i][:movies])
+    i += 1 
   end
-
-  a_o_a_movies_by_dir
+  return new_array
 end
 
 # ----------------    End of Your Code Region --------------------
