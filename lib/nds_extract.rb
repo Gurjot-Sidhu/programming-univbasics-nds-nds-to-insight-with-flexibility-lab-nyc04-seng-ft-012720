@@ -34,22 +34,13 @@ end
 # Your code after this point
 
 def movies_with_director_key(name, movies_collection)
-   { 
-  {
-    :title => movie_data[:title],
-    :worldwide_gross => movie_data[:worldwide_gross],
-    :release_year => movie_data[:release_year],
-
-  result = []
-  index = 0
-
-  while index < movies_collection.length do
-    movie_data = movies_collection[index]
-    result << movie_with_director_name(name, movie_data)
-    index += 1
+  movies = []
+  i = 0 
+  while i < movies_collection.length do
+    movies << movie_with_director_name(name, movies_collection[i])
+    i += 1 
   end
-
-  result
+  return movies 
 end
 
 
